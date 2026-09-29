@@ -6,6 +6,7 @@ services:
       - "8080:80"
     volumes:
       - ./web:/var/www/html
+      - ./web/hardening.conf:/etc/apache2/conf-enabled/zzz-hardening.conf:ro
   db:
     image: mariadb:11
     env_file: .env
